@@ -24,7 +24,7 @@ while($row = mysqli_fetch_assoc($result)) {
     
     echo "<option value='$id'>$fn $sn</option>";
 }
-echo "</select>";
+echo '</select>';
 
 mysqli_close($conn); 
 ?>
