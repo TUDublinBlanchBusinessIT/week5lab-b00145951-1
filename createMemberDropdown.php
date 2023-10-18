@@ -11,22 +11,20 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * from member";
+$sql = "SELECT id, firstname, surname FROM member";
 $result = mysqli_query($conn, $sql);
 
-echo "<TABLE border='1'>";
+echo "<select name='memberID>";
 
 #HTML
-echo "<label for = 'memberID'> Select member:<label>";
-echo "<select a name = 'memberID' name='memberID'>";
-echo "<option value = ''>-- Select member --</option>";
 while($row = mysqli_fetch_assoc($result)) {
     $id=$row['id'];
     $fn=$row['firstname'];
     $sn=$row['surname'];
-    echo "<TR><TD>$id</TD><TD>$fn</TD><TD>$sn</TD></TR>";
+    
+    echo "<option value='$id'>$fn $sn</option>";
 }
-echo "</TABLE>";
+echo "</select>";
 
 mysqli_close($conn); 
 ?>
