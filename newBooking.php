@@ -1,7 +1,7 @@
 <html>
     <body>
         <form method="POST" action="createNewBooking.php">
-            <?php include("createMemberDropdown.php"); ?> <br>
+            Member ID: <input type= "text" name = <?PHP include createMemberDropDown.php;?>
             Court ID: <input type = "text" name = "courtID" required/> <br>
             Booking Date: <input type="date" name="bookingDate"/><br>
             Start Time: <input type="time" name="startTime"/><br>
